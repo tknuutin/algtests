@@ -1,0 +1,6 @@
+.DS_Store
+**/.DS.Store
+node_modules/
+public/
+clonegraph/public/
+test/public/
