@@ -43,7 +43,7 @@ gulp.task('build', ['clean', 'copy'], function () {
         var b = browserify({
             transform: [["babelify", { presets: ["es2015"]}]],
             entries: glob.sync(join(path, config.sourceFolder, '/**/*.js')),
-            debug: true,
+            // debug: true,
             paths: [config.sourceFolder]
         });
 
@@ -52,7 +52,7 @@ gulp.task('build', ['clean', 'copy'], function () {
             // .pipe(debug())
             .pipe(buffer())
             .pipe(sourcemaps.init({ loadMaps: true }))
-                .pipe(uglify())
+                // .pipe(uglify())
                 .on('error', gutil.log)
             .pipe(sourcemaps.write('./'))
             .pipe(gulp.dest(join(path, config.buildFolder)));
